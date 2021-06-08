@@ -3,9 +3,9 @@ version: '3.4'
 services:
   postgres:
     image: postgres:12-alpine
-    container_name: "postgres-boilerplate"
+    container_name: "postgres"
     environment:
-      - POSTGRES_DB=collabits
+      - POSTGRES_DB=app
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - TZ=GMT
