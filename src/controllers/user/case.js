@@ -13,7 +13,7 @@ exports.validateBodyCreate = [
     if (!isValidDate(value) && isValidDateLowestCurrent(value)) throw new Error('Data inválida.')
     return true
   }),
-  body('type').isString().isIn(['student', 'teacher'])
+  body('type').isString().isIn(['support', 'user'])
 ]
 
 exports.validateBodyUpdate = [

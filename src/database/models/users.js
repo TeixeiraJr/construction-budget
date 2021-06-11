@@ -22,6 +22,15 @@ module.exports = (sequelize, DataType) => {
       }
     },
 
+    shopName: {
+      type: DataType.STRING,
+      unique: true,
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      }
+    },
+
     tokenGoogle: {
       type: DataType.TEXT,
       allowNull: true
@@ -42,28 +51,63 @@ module.exports = (sequelize, DataType) => {
       allowNull: true
     },
 
+    cpfCnpj: {
+      type: DataType.STRING(20),
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      },
+    },
+
     phone: {
       type: DataType.STRING(20),
-      allowNull: true,
+      allowNull: false,
+      validate: {
+        notEmpty: true
+      },
       set (field) {
         return this.setDataValue('phone', field.replace(/\D+/g, ''))
       }
     },
 
-    avatar: {
+    address: {
+      type: DataType.STRING,
+      allowNull: true,
+      validate: {
+        notEmpty: true
+      },
+    },
+
+    addressNumber: {
+      type: DataType.STRING,
+      allowNull: true
+    },
+
+    postalCode: {
+      type: DataType.STRING,
+      allowNull: true,
+      validate: {
+        notEmpty: true
+      },
+    },
+
+    logo: {
       type: DataType.TEXT,
       allowNull: true
     },
 
-    birthday: {
-      type: DataType.DATEONLY,
-      allowNull: true
+    type: {
+      type: DataType.ENUM(['admin', 'support', 'user']),
+      allowNull: false
     },
 
-    type: {
-      type: DataType.ENUM(['admin', 'teacher', 'student']),
-      allowNull: false
-    }
+    birthday: {
+      type: DataType.DATEONLY,
+      allowNull: true,
+      validate: {
+        notEmpty: true
+      },
+    },
   })
 
   User.associate = models => {
