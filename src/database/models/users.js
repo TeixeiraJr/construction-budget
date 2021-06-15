@@ -19,6 +19,9 @@ module.exports = (sequelize, DataType) => {
       allowNull: false,
       validate: {
         notEmpty: true
+      },
+      set (field) {
+        return this.setDataValue('name', field.trim())
       }
     },
 
@@ -28,6 +31,9 @@ module.exports = (sequelize, DataType) => {
       allowNull: false,
       validate: {
         notEmpty: true
+      },
+      set (field) {
+        return this.setDataValue('name', field.trim())
       }
     },
 
@@ -51,16 +57,18 @@ module.exports = (sequelize, DataType) => {
       allowNull: true
     },
 
-    cpfCnpj: {
-      type: DataType.STRING(20),
-      allowNull: false,
-      validate: {
-        notEmpty: true
-      },
+    cpf: {
+      type: DataType.STRING(11),
+      allowNull: true,
     },
 
+    cnpj: {
+      type: DataType.STRING(14),
+      allowNull: true,
+    },
+    
     phone: {
-      type: DataType.STRING(20),
+      type: DataType.STRING(11),
       allowNull: false,
       validate: {
         notEmpty: true
@@ -70,35 +78,20 @@ module.exports = (sequelize, DataType) => {
       }
     },
 
-    address: {
-      type: DataType.STRING,
-      allowNull: true,
-      validate: {
-        notEmpty: true
-      },
-    },
-
-    addressNumber: {
-      type: DataType.STRING,
-      allowNull: true
-    },
-
-    postalCode: {
-      type: DataType.STRING,
-      allowNull: true,
-      validate: {
-        notEmpty: true
-      },
-    },
-
-    logo: {
+    avatar: {
       type: DataType.TEXT,
       allowNull: true
     },
 
     type: {
-      type: DataType.ENUM(['admin', 'support', 'user']),
-      allowNull: false
+      type: DataType.ENUM('admin', 'support', 'user'),
+      defaultValue: 'user'
+    },
+
+    bounty: {
+      type: DataType.FLOAT,
+      allowNull: false,
+      defaultValue: '0.85'
     },
 
     birthday: {
@@ -107,6 +100,11 @@ module.exports = (sequelize, DataType) => {
       validate: {
         notEmpty: true
       },
+    },
+
+    lasttry: {
+      type: DataType.DATE,
+      allowNull: true,
     },
   })
 

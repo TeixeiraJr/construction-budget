@@ -50,43 +50,43 @@ module.exports = {
         allowNull: true
       },
 
-      cpfCnpj: {
+      cpf: {
         type: Sequelize.STRING,
         allowNull: true
       },
 
+      cnpj: {
+        type: Sequelize.STRING,
+        allowNull: true
+      },
+      
       phone: {
         type: Sequelize.STRING,
         allowNull: true
       },
 
-      address: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-
-      addressNumber: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-
-      postalCode: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
-
-      logo: {
+      avatar: {
         type: Sequelize.TEXT,
         allowNull: true
       },
 
       type: {
-        type: Sequelize.ENUM(['admin', 'support', 'user']),
-        allowNull: false
+        type: Sequelize.ENUM('admin', 'support', 'user'),
+        defaultValue: 'user'
+      },
+
+      bounty: {
+        type: Sequelize.FLOAT,
+        defaultValue: '0.85'
       },
 
       birthday: {
         type: Sequelize.DATEONLY,
+        allowNull: true
+      },
+
+      lasttry: {
+        type: Sequelize.DATE,
         allowNull: true
       },
 

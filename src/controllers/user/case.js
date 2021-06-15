@@ -12,7 +12,7 @@ exports.validateBodyCreate = [
     if (!isValidDate(value) && isValidDateLowestCurrent(value)) throw new Error('Data inválida.')
     return true
   }),
-  body('type').isString().isIn(['support', 'user'])
+  body('type').default('user')
 ]
 
 exports.validateBodyUpdate = [
