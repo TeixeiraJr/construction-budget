@@ -1,10 +1,10 @@
 const { Op } = require('sequelize')
 const { findAllPaginateUser } = require('../../database/repository/user')
-const { isAdmin } = require('../../presenters/permissions')
+const { isSupport } = require('../../presenters/permissions')
 
 exports.path = '/user'
 exports.method = 'GET'
-exports.middleware = [isAdmin]
+exports.middleware = [isSupport]
 exports.authenticate = true
 
 exports.handler = async (req, res, next) => {

@@ -1,5 +1,4 @@
 const { body, param } = require('express-validator')
-const { URLS } = require('../../presenters/constants')
 const { isValidDate, isValidDateLowestCurrent } = require('../../presenters/validations')
 const { findOneUserEmail, findOneUserById } = require('../../database/repository/user')
 
@@ -18,8 +17,10 @@ exports.validateBodyCreate = [
 exports.validateBodyUpdate = [
   body('name').notEmpty().trim(),
   body('email').isEmail(),
+  body('shopName').notEmpty().trim(),
+  body('cpf').notEmpty().trim(),
   body('phone').notEmpty().trim(),
-  body('avatar').isString().isIn(URLS),
+  body('avatar').isString(),
   body('password').optional().isLength({ min: 6 }).trim(),
   body('birthday').notEmpty().custom((value) => {
     if (!isValidDate(value) && isValidDateLowestCurrent(value)) throw new Error('Data inválida.')

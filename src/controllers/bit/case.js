@@ -42,7 +42,7 @@ exports.validateParamsClassId = [
 ]
 
 exports.validateIsStudent = async (req, res, next) => {
-  if (req.user.type === 'student') {
+  if (req.user.type === 'user') {
     return res.status(400).json({
       errors: [{ title: 'Error', message: 'Você não tem permissão para está ação!' }]
     })

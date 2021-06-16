@@ -8,39 +8,42 @@ module.exports = {
       {
         id: Sequelize.literal('uuid_generate_v4()'),
         name: 'Admin',
-        email: 'admin@admin.com.br',
-        type: 'admin',
+        email: 'admin@gmail.com',
+        shopName: "admin shop",
         password: generatePassword('12345678'),
+        type: 'admin',
+        cpf: "12345678987",
+        phone: "81999999876",
+        birthday: "1998-01-01",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: Sequelize.literal('uuid_generate_v4()'),
-        name: 'Junior',
-        email: 'junior4g4@gmail.com',
-        type: 'admin',
+        name: 'support',
+        email: 'support@gmail.com',
+        shopName: "admin shop",
         password: generatePassword('12345678'),
+        type: 'support',
+        cpf: "12345678987",
+        phone: "81999999876",
+        birthday: "1998-01-01",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         id: Sequelize.literal('uuid_generate_v4()'),
-        name: 'Felipe',
-        email: 'felipe1181jua@gmail.com',
-        type: 'admin',
+        name: 'user',
+        email: 'user@gmail.com',
+        shopName: "admin shop",
         password: generatePassword('12345678'),
+        type: 'user',
+        cpf: "12345678987",
+        phone: "81999999876",
+        birthday: "1998-01-01",
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      {
-        id: Sequelize.literal('uuid_generate_v4()'),
-        name: 'Higor',
-        email: 'higordiegoti@gmail.com',
-        type: 'admin',
-        password: generatePassword('12345678'),
-        createdAt: new Date(),
-        updatedAt: new Date()
-      }
     ], {})
   },
 

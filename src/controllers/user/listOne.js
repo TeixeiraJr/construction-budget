@@ -1,10 +1,11 @@
 const { findOneUserById } = require('../../database/repository/user')
 const { validateErrorBody } = require('../../presenters/handle')
 const { validateParamsUserId, validateExistentUserById } = require('./case')
+const { isSupport } = require('../../presenters/permissions')
 
 exports.path = '/user/:id'
 exports.method = 'GET'
-exports.middleware = [validateParamsUserId, validateErrorBody, validateExistentUserById]
+exports.middleware = [isSupport, validateParamsUserId, validateErrorBody, validateExistentUserById]
 exports.authenticate = true
 
 exports.handler = async (req, res, next) => {

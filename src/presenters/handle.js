@@ -9,7 +9,7 @@ const { validationResult } = require('express-validator')
 const parseErrorsExpressValidator = (errors) => errors.reduce((acc, value) => {
   acc.push({
     title: value.param || 'Ocorreu um erro',
-    message: value.msg || 'Error não identificado, por favor entre em contato com o administrador!'
+    message: value.msg || 'Erro não identificado, por favor entre em contato com o administrador!'
   })
   return acc
 }, [])
