@@ -21,7 +21,7 @@ module.exports = (sequelize, DataType) => {
         notEmpty: true
       },
       set (field) {
-        return this.setDataValue('name', field.trim())
+        return this.setDataValue('email', field.trim())
       }
     },
 
@@ -33,7 +33,7 @@ module.exports = (sequelize, DataType) => {
         notEmpty: true
       },
       set (field) {
-        return this.setDataValue('name', field.trim())
+        return this.setDataValue('shopName', field.trim())
       }
     },
 

@@ -67,8 +67,8 @@ exports.findAllPaginateUser = async ({ query = {}, page = 1 }) => {
   page)
 }
 
-exports.updateUserById = (id, { name, email, password, phone, avatar, birthday }) => {
-  return update('User', { where: { id } }, { name, email, password, phone, avatar, birthday })
+exports.updateUserById = (id, { name, email, shopName, cpf, cnpj, phone, avatar, birthday }) => {
+  return update('User', { where: { id } }, { name, email, shopName, cpf, cnpj, phone, avatar, birthday })
 }
 
 exports.deleteUserById = ({ id }) => {
