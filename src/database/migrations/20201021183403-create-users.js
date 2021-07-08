@@ -23,11 +23,6 @@ module.exports = {
         allowNull: true
       },
 
-      shopName: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-
       tokenGoogle: {
         type: Sequelize.TEXT,
         unique: true,
@@ -54,19 +49,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true
       },
-
-      cnpj: {
-        type: Sequelize.STRING,
-        allowNull: true
-      },
       
       phone: {
         type: Sequelize.STRING,
-        allowNull: true
-      },
-
-      avatar: {
-        type: Sequelize.TEXT,
         allowNull: true
       },
 
@@ -75,18 +60,13 @@ module.exports = {
         defaultValue: 'user'
       },
 
-      bounty: {
-        type: Sequelize.FLOAT,
-        defaultValue: '0.85'
+      active: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: 'false'
       },
 
       birthday: {
         type: Sequelize.DATEONLY,
-        allowNull: true
-      },
-
-      lasttry: {
-        type: Sequelize.DATE,
         allowNull: true
       },
 

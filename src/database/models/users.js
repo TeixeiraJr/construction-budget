@@ -6,7 +6,7 @@ module.exports = (sequelize, DataType) => {
       type: DataType.STRING,
       allowNull: true,
       validate: {
-        notEmpty: false
+        notEmpty: true
       },
       set (field) {
         return this.setDataValue('name', field.trim())
@@ -22,18 +22,6 @@ module.exports = (sequelize, DataType) => {
       },
       set (field) {
         return this.setDataValue('email', field.trim())
-      }
-    },
-
-    shopName: {
-      type: DataType.STRING,
-      unique: true,
-      allowNull: false,
-      validate: {
-        notEmpty: true
-      },
-      set (field) {
-        return this.setDataValue('shopName', field.trim())
       }
     },
 
@@ -61,26 +49,14 @@ module.exports = (sequelize, DataType) => {
       type: DataType.STRING(11),
       allowNull: true,
     },
-
-    cnpj: {
-      type: DataType.STRING(14),
-      allowNull: true,
-    },
     
     phone: {
       type: DataType.STRING(11),
       allowNull: false,
-      validate: {
-        notEmpty: true
-      },
+    
       set (field) {
         return this.setDataValue('phone', field.replace(/\D+/g, ''))
       }
-    },
-
-    avatar: {
-      type: DataType.TEXT,
-      allowNull: true
     },
 
     type: {
@@ -88,10 +64,9 @@ module.exports = (sequelize, DataType) => {
       defaultValue: 'user'
     },
 
-    bounty: {
-      type: DataType.FLOAT,
-      allowNull: false,
-      defaultValue: '0.85'
+    active: {
+      type: DataType.BOOLEAN,
+      defaultValue: 'false'
     },
 
     birthday: {
@@ -100,11 +75,6 @@ module.exports = (sequelize, DataType) => {
       validate: {
         notEmpty: true
       },
-    },
-
-    lasttry: {
-      type: DataType.DATE,
-      allowNull: true,
     },
   })
 

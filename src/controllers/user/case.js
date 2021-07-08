@@ -6,8 +6,8 @@ exports.validateBodyCreate = [
   body('name').notEmpty().trim(),
   body('email').isEmail(),
   body('password').isLength({ min: 6 }).trim(),
-  body('phone').notEmpty().trim(),
-  body('birthday').notEmpty().custom((value) => {
+  body('phone').trim(),
+  body('birthday').custom((value) => {
     if (!isValidDate(value) && isValidDateLowestCurrent(value)) throw new Error('Data inválida.')
     return true
   }),
@@ -17,12 +17,11 @@ exports.validateBodyCreate = [
 exports.validateBodyUpdate = [
   body('name').notEmpty().trim(),
   body('email').isEmail(),
-  body('shopName').notEmpty().trim(),
   body('cpf').notEmpty().trim(),
-  body('phone').notEmpty().trim(),
+  body('phone').trim(),
   body('avatar').isString(),
   body('password').optional().isLength({ min: 6 }).trim(),
-  body('birthday').notEmpty().custom((value) => {
+  body('birthday').custom((value) => {
     if (!isValidDate(value) && isValidDateLowestCurrent(value)) throw new Error('Data inválida.')
     return true
   })
