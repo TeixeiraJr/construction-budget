@@ -17,9 +17,8 @@ exports.validateBodyCreate = [
 exports.validateBodyUpdate = [
   body('name').notEmpty().trim(),
   body('email').isEmail(),
-  body('cpf').notEmpty().trim(),
+  body('cpf').trim(),
   body('phone').trim(),
-  body('avatar').isString(),
   body('password').optional().isLength({ min: 6 }).trim(),
   body('birthday').custom((value) => {
     if (!isValidDate(value) && isValidDateLowestCurrent(value)) throw new Error('Data inválida.')
