@@ -79,9 +79,7 @@ module.exports = (sequelize, DataType) => {
   })
 
   User.associate = models => {
-    User.hasMany(models.AccessPermission)
-    User.hasMany(models.UserBitInformation)
-    User.hasMany(models.TemplateBits)
+    User.hasMany(models.userAddresses)
   }
 
   return User

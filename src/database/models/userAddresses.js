@@ -7,20 +7,19 @@ module.exports = (sequelize, DataType) => {
       allowNull: true
     },
 
-    BitId: {
-      type: DataType.UUID,
+    city: {
+      type: DataType.STRING,
       allowNull: false
     },
 
-    statusAction: {
-      type: DataType.ENUM(['interacted', 'no_interacted']),
+    postalCode: {
+      type: DataType.NUMBER(8),
       allowNull: false
     }
   })
 
   UserBitInformation.associate = (models) => {
     UserBitInformation.belongsTo(models.User)
-    UserBitInformation.belongsTo(models.Bits)
   }
 
   return UserBitInformation
