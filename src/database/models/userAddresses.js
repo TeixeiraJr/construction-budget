@@ -1,6 +1,6 @@
 
 module.exports = (sequelize, DataType) => {
-  const UserBitInformation = sequelize.define('UserBitInformation', {
+  const userAddresses = sequelize.define('userAddresses', {
 
     UserId: {
       type: DataType.UUID,
@@ -18,9 +18,9 @@ module.exports = (sequelize, DataType) => {
     }
   })
 
-  UserBitInformation.associate = (models) => {
-    UserBitInformation.belongsTo(models.User)
+  userAddresses.associate = (models) => {
+    userAddresses.belongsTo(models.User)
   }
 
-  return UserBitInformation
+  return userAddresses
 }
