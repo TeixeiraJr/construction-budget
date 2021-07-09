@@ -6,8 +6,8 @@ exports.template = hbs.compile(
         </head>
         <body>
             <h1>E-mail para redefinição de senha</h1>
-            <p>Você está cadastrado na plataforma Collabits! Acesse esse link para redefinir sua senha:</p>
-            <a href="https://app.dev.collabits.com/forgot-password-code/{{forgot}}">Link de acesso!<a>
+            <p>Clique no Link abaixo para redefinir sua senha da plataforma Construction budgets: </p>
+            <a href="https://constructionbudget.com/forgot-password-code/{{forgot}}">Link de acesso!<a>
             <br>
         </body>
     </html>`
